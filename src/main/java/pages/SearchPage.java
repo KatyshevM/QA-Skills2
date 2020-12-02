@@ -11,10 +11,11 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class SearchPage {
 
+    //локатор поисковой строки вГугл
     @FindBy(css = "input.gLFyf.gsfi")
     private WebElement SearchInput;
 
-    //поиск поисковой строки в Гугл
+    //локатор найденных элементов в Гугл
     @FindBy(css = "#search .g")
     public List<WebElement> results;
 
