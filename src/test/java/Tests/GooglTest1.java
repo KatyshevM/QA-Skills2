@@ -1,6 +1,7 @@
 package Tests;
 
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -32,7 +33,12 @@ public class GooglTest1 {
     public void test1() {
         driver.get("http://google.com");
         driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("selenium", Keys.ENTER);
-        assertEquals(10, driver.findElements(By.cssSelector("#search .g")).size());
+        assertEquals(9, driver.findElements(By.cssSelector("#search .g")).size());
+
+    }
+    @AfterAll
+    public static void teardown() {
         driver.quit();
     }
+
 }
