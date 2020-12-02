@@ -14,12 +14,16 @@ public class SearchPage {
     @FindBy(css = "input.gLFyf.gsfi")
     private WebElement SearchInput;
 
+    //поиск поисковой строки в Гугл
     @FindBy(css = "#search .g")
     public List<WebElement> results;
 
+
+    //ввод Селениум в поисковой строке в Гугл
     public SearchPage(WebDriver driver) {
         initElements(driver, this);
     }
+
 
     public void search (String text) {
         SearchInput.sendKeys(text, Keys.ENTER);
