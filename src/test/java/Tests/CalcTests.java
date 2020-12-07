@@ -61,7 +61,7 @@ public class CalcTests {
     }
 
     @Test
-    @DisplayName("Задание 1: Расчет 6 ÷ 0") //Отображение названия теста
+    @DisplayName("Задание 2: Расчет 6 ÷ 0") //Отображение названия теста
     public void test2() {
         searchPage.search("Калькулятор");
         calcPage = new CalcPage(driver);
@@ -73,4 +73,14 @@ public class CalcTests {
         assertEquals("Infinity",calcPage.resultPane.getText());
     }
 
+    @Test
+    @DisplayName("Задание 3: Расчет sin()") //Отображение названия теста
+    public void test3() {
+        searchPage.search("Калькулятор");
+        calcPage = new CalcPage(driver);
+        calcPage.sinButton.click();
+        calcPage.equalsButton.click();
+        assertEquals("sin() =", calcPage.memoryPane.getText());
+        assertEquals("Error", calcPage.resultPane.getText());
+    }
 }

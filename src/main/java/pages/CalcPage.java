@@ -66,6 +66,10 @@ public class CalcPage {
     @FindBy(css = "div[jsname='Pt8tGc']")
     public WebElement equalsButton;
 
+    //поиск Синус
+    @FindBy(css = "div[jsname='aN1RFf']")
+    public WebElement sinButton;
+
     //поиск Строки памяти
     @FindBy(css = "span[jsname='ubtiRe']")
     public WebElement memoryPane;
