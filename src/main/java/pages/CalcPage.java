@@ -30,6 +30,10 @@ public class CalcPage {
     @FindBy(css = "div[jsname='Ax5wH']")
     public WebElement fiveButton;
 
+    //поиск 6
+    @FindBy(css = "div[jsname='abcgof']")
+    public WebElement sixButton;
+
     //поиск 0
     @FindBy(css = "div[jsname='bkEvMb']")
     public WebElement zeroButton;
@@ -69,7 +73,6 @@ public class CalcPage {
     //поиск Строки результата
     @FindBy(css = "span[jsname='VssY5c']")
     public WebElement resultPane;
-
 
     public CalcPage(WebDriver driver) {
         initElements(driver, this);

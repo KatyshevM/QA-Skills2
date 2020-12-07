@@ -39,7 +39,7 @@ public class CalcTests {
     }
 
     @Test
-    @DisplayName("Поиск числа резултатов") //Отображение названия теста
+    @DisplayName("Задание 1: Расчет (1 + 2) × 3 - 40 ÷ 5") //Отображение названия теста
     public void test1() {
         searchPage.search("Калькулятор");
         calcPage = new CalcPage(driver);
@@ -58,6 +58,19 @@ public class CalcTests {
         calcPage.equalsButton.click();
         assertEquals("(1 + 2) × 3 - 40 ÷ 5 =",calcPage.memoryPane.getText());
         assertEquals("1",calcPage.resultPane.getText());
-        }
+    }
+
+    @Test
+    @DisplayName("Задание 1: Расчет 6 ÷ 0") //Отображение названия теста
+    public void test2() {
+        searchPage.search("Калькулятор");
+        calcPage = new CalcPage(driver);
+        calcPage.sixButton.click();
+        calcPage.splitButton.click();
+        calcPage.zeroButton.click();
+        calcPage.equalsButton.click();
+        assertEquals("6 ÷ 0 =",calcPage.memoryPane.getText());
+        assertEquals("Infinity",calcPage.resultPane.getText());
+    }
 
 }
