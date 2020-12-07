@@ -1,9 +1,6 @@
 package Tests;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,8 +26,6 @@ public class CalcTests {
         driver = new ChromeDriver(options);
         driver.get("http://google.com");
         searchPage = new SearchPage(driver);
-
-
     }
 
     @BeforeEach
@@ -82,5 +77,9 @@ public class CalcTests {
         calcPage.equalsButton.click();
         assertEquals("sin() =", calcPage.memoryPane.getText());
         assertEquals("Error", calcPage.resultPane.getText());
+    }
+
+    @AfterAll
+    public static void teardown() { driver.quit();
     }
 }
